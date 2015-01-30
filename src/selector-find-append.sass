@@ -1,0 +1,12 @@
+=selector-find-append($target-selector, $appended-selector)
+  @each $selectors in &
+    $any-change: false
+    $new-selectors: ''
+    @each $selector in $selectors
+      @if $selector == $target-selector
+        $any-change: true
+        $selector: selector-append($selector, $appended-selector)
+      $new-selectors: $new-selectors + $selector + ' '
+    @if $any-change
+      @at-root #{$new-selectors}
+        @content

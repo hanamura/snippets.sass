@@ -1,0 +1,14 @@
+@import '../src/selector-index-append'
+
+#main
+  article,
+  section
+    h1
+      color: black
+      +selector-index-append(-2, '.red')
+        color: red
+      +selector-index-append(1, '.blue')
+        color: blue
+      +selector-index-append(-2, '.red')
+        +selector-index-append(1, '.blue')
+          color: purple

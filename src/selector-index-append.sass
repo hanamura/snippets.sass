@@ -1,0 +1,15 @@
+=selector-index-append($target-index, $appended-selector)
+  @if $target-index == 0
+    @error '$target-index cannot be `0`'
+  @each $selectors in &
+    @while $target-index < 0
+      $target-index: length($selectors) + 1 + $target-index
+    $index: 0
+    $new-selectors: ''
+    @each $selector in $selectors
+      $index: $index + 1
+      @if $index == $target-index
+        $selector: selector-append($selector, $appended-selector)
+      $new-selectors: $new-selectors + $selector + ' '
+    @at-root #{$new-selectors}
+      @content

@@ -1,0 +1,14 @@
+@import '../src/selector-index-replace'
+
+#main
+  article,
+  section
+    h1
+      color: black
+      +selector-index-replace(-1, 'a')
+        color: red
+      +selector-index-replace(1, '#sub')
+        color: blue
+      +selector-index-replace(-1, 'a')
+        +selector-index-replace(1, '#sub')
+          color: purple

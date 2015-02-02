@@ -1,4 +1,4 @@
-=selector-index-replace($target-index, $replaced-selector)
+=selector-index-replace($target-index, $replacing-selector)
   @if $target-index == 0
     @error '$target-index cannot be `0`'
   $new-selectors: ''
@@ -11,7 +11,7 @@
     @each $sel in $selector
       $i: $i + 1
       @if $i == $local-index
-        $sel: $replaced-selector
+        $sel: $replacing-selector
       $new-selector: $new-selector + $sel + ' '
     @if $new-selector != $selector
       $new-selectors: $new-selectors + $new-selector + ', '

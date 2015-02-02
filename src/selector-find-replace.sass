@@ -1,12 +1,9 @@
 =selector-find-replace($target-selector, $replaced-selector)
-  @each $selectors in &
-    $any-change: false
-    $new-selectors: ''
-    @each $selector in $selectors
-      @if $selector == $target-selector
-        $any-change: true
-        $selector: $replaced-selector
-      $new-selectors: $new-selectors + $selector + ' '
-    @if $any-change
-      @at-root #{$new-selectors}
-        @content
+  $new-selectors: ''
+  @each $selector in &
+    $new-selector: selector-replace($selector, $target-selector, $replaced-selector)
+    $new-selector: nth($new-selector, 1)
+    @if $new-selector != $selector
+      $new-selectors: $new-selectors + $new-selector + ', '
+  @at-root #{$new-selectors}
+    @content

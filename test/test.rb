@@ -14,6 +14,8 @@ class TestMixins < MiniTest::Unit::TestCase
 
   def test_mixins
     [
+      'selector-find-append',
+      'selector-find-replace',
       'selector-index-append',
       'selector-index-replace',
     ].each do |name|

@@ -1,0 +1,14 @@
+@import '../src/selector-find-append'
+
+#main
+  article,
+  section
+    h1
+      color: black
+      +selector-find-append('#main', '.red')
+        color: red
+      +selector-find-append('article', '.blue')
+        color: blue
+      +selector-find-append('#main', '.red')
+        +selector-find-append('article', '.blue')
+          color: purple

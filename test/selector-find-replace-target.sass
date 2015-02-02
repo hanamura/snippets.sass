@@ -1,0 +1,14 @@
+@import '../src/selector-find-replace'
+
+#main
+  article,
+  section
+    h1
+      color: black
+      +selector-find-replace('#main', '#sub')
+        color: red
+      +selector-find-replace('article', 'a')
+        color: blue
+      +selector-find-replace('#main', '#sub')
+        +selector-find-replace('article', 'a')
+          color: purple

@@ -1,15 +1,19 @@
 =selector-index-append($target-index, $appended-selector)
   @if $target-index == 0
     @error '$target-index cannot be `0`'
-  @each $selectors in &
-    @while $target-index < 0
-      $target-index: length($selectors) + 1 + $target-index
-    $index: 0
-    $new-selectors: ''
-    @each $selector in $selectors
-      $index: $index + 1
-      @if $index == $target-index
-        $selector: selector-append($selector, $appended-selector)
-      $new-selectors: $new-selectors + $selector + ' '
-    @at-root #{$new-selectors}
-      @content
+  $new-selectors: ''
+  @each $selector in &
+    $local-index: $target-index
+    @while $local-index < 0
+      $local-index: $local-index + length($selector) + 1
+    $i: 0
+    $new-selector: ''
+    @each $sel in $selector
+      $i: $i + 1
+      @if $i == $local-index
+        $sel: selector-append($sel, $appended-selector)
+      $new-selector: $new-selector + $sel + ' '
+    @if $new-selector != $selector
+      $new-selectors: $new-selectors + $new-selector + ', '
+  @at-root #{$new-selectors}
+    @content

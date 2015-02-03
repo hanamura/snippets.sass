@@ -1,7 +1,7 @@
-=selector-find-append($target-selector, $appended-selector)
+=selector-find-append($target-selector, $appending-selector)
   $new-selectors: ''
   @each $selector in &
-    $new-selector: selector-replace($selector, $target-selector, $target-selector + $appended-selector)
+    $new-selector: selector-replace($selector, $target-selector, $target-selector + $appending-selector)
     $new-selector: nth($new-selector, 1)
     @if $new-selector != $selector
       $new-selectors: $new-selectors + $new-selector + ', '

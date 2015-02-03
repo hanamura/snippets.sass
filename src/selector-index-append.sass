@@ -1,4 +1,4 @@
-=selector-index-append($target-index, $appended-selector)
+=selector-index-append($target-index, $appending-selector)
   @if $target-index == 0
     @error '$target-index cannot be `0`'
   $new-selectors: ''
@@ -11,7 +11,7 @@
     @each $sel in $selector
       $i: $i + 1
       @if $i == $local-index
-        $sel: selector-append($sel, $appended-selector)
+        $sel: selector-append($sel, $appending-selector)
       $new-selector: $new-selector + $sel + ' '
     @if $new-selector != $selector
       $new-selectors: $new-selectors + $new-selector + ', '

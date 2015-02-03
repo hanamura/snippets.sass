@@ -1,0 +1,21 @@
+{
+  "name": "snippets.sass",
+  "version": "0.1.0",
+  "homepage": "https://github.com/hanamura/snippets.sass",
+  "authors": [
+    "Taro Hanamura <m@hanamurataro.com>"
+  ],
+  "description": "Some snippets for Sass",
+  "keywords": [
+    "sass",
+    "css"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "test",
+    "LICENSE",
+    "README.md"
+  ]
+}

@@ -11,7 +11,7 @@
     @each $sel in $selector
       $i: $i + 1
       @if $i == $local-index
-        $sel: selector-append($sel, $appending-selector)
+        $sel: selector-replace($sel, $sel, $sel + $appending-selector)
       $new-selector: $new-selector + $sel + ' '
     @if $new-selector != $selector
       $new-selectors: $new-selectors + $new-selector + ', '

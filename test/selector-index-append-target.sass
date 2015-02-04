@@ -12,3 +12,9 @@
       +selector-index-append(-2, '.red')
         +selector-index-append(1, '.blue')
           color: purple
+
+#main
+  &::before
+    content: ''
+    +selector-index-append(1, '.yellow')
+      color: yellow

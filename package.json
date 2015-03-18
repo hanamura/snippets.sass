@@ -1,6 +1,7 @@
 {
   "name": "snippets.sass",
   "scripts": {
+    "preinstall": "bundle install",
     "test": "ruby test/test.rb",
     "prepare": "npm test && gulp imports && git add snippets.sass"
   },

@@ -3,7 +3,7 @@
   "scripts": {
     "preinstall": "bundle install",
     "test": "ruby test/test.rb",
-    "prepare": "npm test && gulp imports && git add snippets.sass"
+    "prepare": "npm install && npm test && gulp imports && git add snippets.sass"
   },
   "devDependencies": {
     "coffee-script": "1.9.0",

@@ -2,7 +2,7 @@ require 'minitest/unit'
 require 'minitest/autorun'
 require 'sass'
 
-class TestMixins < MiniTest::Unit::TestCase
+class TestSnippets < MiniTest::Unit::TestCase
   def render(sass)
     engine = Sass::Engine.new sass, {
       :style => :compressed,
@@ -12,7 +12,7 @@ class TestMixins < MiniTest::Unit::TestCase
     engine.render
   end
 
-  def test_mixins
+  def test_snippets
     [
       'selector-find-append',
       'selector-find-replace',

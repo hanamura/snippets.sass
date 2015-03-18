@@ -1,0 +1,9 @@
+@function str-replace-all($str, $oldstr, $newstr)
+  $len: str-length($oldstr)
+  $i: str-index($str, $oldstr)
+  @while $i
+    $str-former: str-slice($str, 0, $i - 1)
+    $str-latter: str-slice($str, $i + $len)
+    $str: $str-former + $newstr + $str-latter
+    $i: str-index($str, $oldstr)
+  @return $str

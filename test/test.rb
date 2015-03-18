@@ -18,6 +18,7 @@ class TestSnippets < MiniTest::Unit::TestCase
       'selector-find-replace',
       'selector-index-append',
       'selector-index-replace',
+      'str-replace-all',
     ].each do |name|
       target_path = File.expand_path "#{name}-target.sass", File.dirname(__FILE__)
       expect_path = File.expand_path "#{name}-expect.sass", File.dirname(__FILE__)
